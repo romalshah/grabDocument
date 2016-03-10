@@ -16,11 +16,11 @@ This snippet is used to grab document from API
 
         NSArray *myTemp = [[[responseObject objectForKey:@"query"] objectForKey:@"pages"] allValues];
 
-        fetchedArticle = [[[[myTemp objectAtIndex:0] objectForKey:@"revisions"] objectAtIndex:0] objectForKey:@"*"];
+        grabDocument = [[[[myTemp objectAtIndex:0] objectForKey:@"revisions"] objectAtIndex:0] objectForKey:@"*"];
 
         
 
-        [delegate dataLoaded:[self formatHTMLPage:fetchedArticle] withUrlMainImage:[self getUrlOfMainImage:fetchedArticle]];
+        [delegate dataLoaded:[self formatHTMLPage:fetchedArticle] withUrlMainImage:[self getUrlOfMainImage:grabDocument]];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
